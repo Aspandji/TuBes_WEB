@@ -11,6 +11,25 @@ class Home extends CI_Controller {
 		$data['musik_list'] = $this->musik_model->getDatamusik();
 		$this->load->view('home',$data);	
 	}
+	public function index()
+	{
+		echo "ini kontroller musik";	
+	}
+	public function playlist()
+	{
+		echo "ini fungsi playlist";	
+	}
+
+	public function download()
+	{
+		echo "ini fungsi download";	
+	}	
+	public function upload()
+	{
+		echo "ini fungsi upload";	
+	}
+	
+
 
 }
 
