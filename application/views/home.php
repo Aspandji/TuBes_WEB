@@ -25,14 +25,14 @@
   				<span class="icon-bar"></span>
   				<span class="icon-bar"></span>
   			</button>
-  			<a class="navbar-brand" href="#">Latihan</a>
+  			<a class="navbar-brand" href="#">MusikKU</a>
   		</div>
   
   		<!-- Collect the nav links, forms, and other content for toggling -->
   		<div class="collapse navbar-collapse navbar-ex1-collapse">
   			<ul class="nav navbar-nav">
-  				<li class="active"><a href="<?php echo site_url()?>/home_menu">Daftar Menu</a></li>
-          <li class=""><a href="<?php echo site_url()?>/menu">Edit Menu</a></li>
+  				<li class="active"><a href="<?php echo site_url()?>/home">Daftar Musik</a></li>
+          <li class=""><a href="<?php echo site_url()?>/menu">Edit Musik</a></li>
           <li><a href="<?php echo site_url()?>/Login/logout">Logout</a></li>
           
   			</ul>
@@ -43,6 +43,41 @@
   		</div><!-- /.navbar-collapse -->
   	</div>
   </nav>
-  	
+  <div class="container">
+      <h1>Daftar Menu</h1>
+    </div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+            <th>No</th>   
+            <th>Band</th>
+            <th>Judul Lagu</th>
+            <th>Deskripsi</th>
+            <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($musik_list as $key => $value): ?>
+            <tr>
+              <td><?php echo $value['id'] ?></td>
+              <td><?php echo $value['band'] ?></td>
+              <td><?php echo $value['judul lagu'] ?></td>
+              <td><?php echo $value['deskripsi'] ?></td>
+              <td>
+                <a href="<?php echo base_url("index.php/menu/update/".$value['id']) ?>"><button type="button" class="btn btn-sm btn-success"> <span class="glyphicon glyphicon-pencil"></span> Update</button></a>
+                <a href="<?php echo base_url("index.php/menu/delete/".$value['id']) ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
+              </td>
+            </tr>
+            
+          <?php endforeach ?>
+                       
+            </tbody>
+  	     </table>
+          <p>
+        <a href="<?php echo base_url("index.php/menu/create/ ")?>"><button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-plus"></span> Tambah Musik
+    </button></a>
+      </p>
+       </div>
 </body>
 </html>

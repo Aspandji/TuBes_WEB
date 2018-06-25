@@ -7,7 +7,9 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('url','form');
-		$this->load->view('home');	
+		$this->load->model('musik_model');
+		$data['musik_list'] = $this->musik_model->getDatamusik();
+		$this->load->view('home',$data);	
 	}
 
 }
