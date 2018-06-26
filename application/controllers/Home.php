@@ -10,14 +10,10 @@ class Home extends CI_Controller {
 		$this->load->model('musik_model');
 		$data['musik_list'] = $this->musik_model->getDatamusik();
 		$this->load->view('home',$data);	
-	}
-	public function index()
-	{
-		echo "ini kontroller musik";	
-	}
+	} 
 	public function playlist()
 	{
-		echo "ini fungsi playlist";	
+		$this->load->view('playlist');	
 	}
 
 	public function download()
@@ -29,7 +25,37 @@ class Home extends CI_Controller {
 		echo "ini fungsi upload";	
 	}
 	
-
+	public function create()
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('musik_model');
+		$this->form_validation->set_rules('artist', 'Artist', 'trim|required');
+		$this->form_validation->set_rules('lagu', 'Lagu', 'trim|required');
+		$this->form_validation->set_rules('genre', 'Genre', 'trim|required');
+		if ($this->form_validation->run()==FALSE) {
+			$this->load->view('tambah_lagu_view');
+		} else {
+			$config['upload_path'] = './assets/img/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']  = '10000';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '768';
+			
+			$this->load->library('upload', $config);
+			
+			if ( ! $this->upload->do_upload('userfile'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				$this->load->view('tambah_lagu_view', $error);
+			}
+			else{
+			$this->musik_model->insertMusik();
+			$this->load->view('tambah_lagu_sukses');
+			}
+		}
+		
+	}
 
 }
 

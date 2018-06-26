@@ -32,7 +32,7 @@
   		<div class="collapse navbar-collapse navbar-ex1-collapse">
   			<ul class="nav navbar-nav">
   				<li class="active"><a href="<?php echo site_url()?>/home">Daftar Musik</a></li>
-          <li class=""><a href="<?php echo site_url()?>/menu">Edit Musik</a></li>
+          <li class=""><a href="<?php echo site_url()?>/home/playlist">Play List</a></li>
           <li><a href="<?php echo site_url()?>/Login/logout">Logout</a></li>
           
   			</ul>
@@ -50,9 +50,10 @@
             <thead>
               <tr>
             <th>No</th>   
-            <th>Band</th>
-            <th>Judul Lagu</th>
-            <th>Deskripsi</th>
+            <th>Artist</th>
+            <th>Lagu</th>
+            <th>Genre</th>
+            <th>Album</th>
             <th>Action</th>
               </tr>
             </thead>
@@ -60,9 +61,12 @@
             <?php foreach ($musik_list as $key => $value): ?>
             <tr>
               <td><?php echo $value['id'] ?></td>
-              <td><?php echo $value['band'] ?></td>
-              <td><?php echo $value['judul lagu'] ?></td>
-              <td><?php echo $value['deskripsi'] ?></td>
+              <td><?php echo $value['artist'] ?></td>
+              <td><?php echo $value['lagu'] ?></td>
+              <td><?php echo $value['genre'] ?></td>
+              <td>
+                  <img src="<?php echo base_url()?>assets/img/<?php echo $value['album']; ?>" width="90" height="90"/> 
+            </td>
               <td>
                 <a href="<?php echo base_url("index.php/menu/update/".$value['id']) ?>"><button type="button" class="btn btn-sm btn-success"> <span class="glyphicon glyphicon-pencil"></span> Update</button></a>
                 <a href="<?php echo base_url("index.php/menu/delete/".$value['id']) ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
@@ -74,7 +78,7 @@
             </tbody>
   	     </table>
           <p>
-        <a href="<?php echo base_url("index.php/menu/create/ ")?>"><button type="button" class="btn btn-info">
+        <a href="<?php echo base_url("index.php/home/create/ ")?>"><button type="button" class="btn btn-info">
       <span class="glyphicon glyphicon-plus"></span> Tambah Musik
     </button></a>
       </p>
