@@ -17,9 +17,27 @@ class Musik_model extends CI_Model {
  		'artist' =>$this->input->post('artist'),
  		'genre' =>$this->input->post('genre'),
  		'album' => $this->upload->data('file_name')
- );
+ 	);
  	$this->db->insert('lagu', $object);
  }
+ public function updateById($id)
+		{
+			$data = array(
+		'lagu' =>$this->input->post('lagu'),
+ 		'artist' =>$this->input->post('artist'),
+ 		'genre' =>$this->input->post('genre'),
+ 		'album' => $this->upload->data('file_name')
+			);
+			$this->db->where('id', $id);
+			$this->db->update('lagu', $data);
+		}
+		public function getMusik($id)
+		{
+			$this->db->where('id', $id);
+			$query = $this->db->get('lagu');
+			return $query->result();
+		}
+		
 
 }
 

@@ -54,8 +54,44 @@ class Home extends CI_Controller {
 			$this->load->view('tambah_lagu_sukses');
 			}
 		}
-		
 	}
+
+		public function update($id)
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('musik_model');
+		$this->form_validation->set_rules('artist', 'Artist', 'trim|required');
+		$this->form_validation->set_rules('lagu', 'Lagu', 'trim|required');
+		$this->form_validation->set_rules('genre', 'Genre', 'trim|required');
+		$this->load->model('musik_model');
+		$data['home'] = $this->musik_model->getMusik($id);
+
+		if ($this->form_validation->run()==FALSE)
+		{
+			$this->load->view('edit_lagu_view',$data);
+		}
+		else
+		{
+			$config['upload_path'] = './assets/uploads/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']  = '10000';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '768';
+			
+			$this->load->library('upload', $config);
+			
+			if ( ! $this->upload->do_upload('userfile'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				$this->load->view('edit_lagu_view', $error);
+			}else{
+	
+			$this->musik_model->updateById($id);
+			$this->load->view('edit_lagu_sukses');
+		}
+	}
+}
 
 }
 
