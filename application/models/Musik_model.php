@@ -11,15 +11,19 @@ class Musik_model extends CI_Model {
 	}
 
 	public function insertMusik()
- {
+ 	{
  	$object = array(
  		'lagu' =>$this->input->post('lagu'),
  		'artist' =>$this->input->post('artist'),
  		'genre' =>$this->input->post('genre'),
  		'album' => $this->upload->data('file_name')
- );
+ 	);
  	$this->db->insert('lagu', $object);
- }
+	}
+
+	public function delete($id) { 
+         $query = $this->db->query("Delete from lagu where id=$id");
+         } 
 
 }
 

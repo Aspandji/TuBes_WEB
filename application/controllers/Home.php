@@ -57,6 +57,14 @@ class Home extends CI_Controller {
 		
 	}
 
+	public function delete($id)
+	{
+		$this->load->helper("url");
+		$this->load->model("musik_model");
+		$this->musik_model->delete($id);
+		redirect('home');
+	}
+
 }
 
 /* End of file Home.php */
