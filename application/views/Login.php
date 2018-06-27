@@ -71,12 +71,20 @@
 <div class="container">
 
 	<form class="form-signin">
-		<h1 class="form-signin-heading text-muted">Sign In</h1>
-		<input type="text" class="form-control" placeholder="Email address" required="" autofocus="">
-		<input type="password" class="form-control" placeholder="Password" required="">
-		<button class="btn btn-lg btn-primary btn-block" type="submit">
+		<?php echo form_open_multipart('Login/cekLogin/'); ?>
+    <h1 class="form-signin-heading text-muted">Sign In</h1>
+    <?php echo validation_errors (); ?>
+		<input type="text" class="form-control" name="username" id="username" placeholder="Email address" >
+		
+    <input type="password" class="form-control" name="password" id="password"  placeholder="Password" >
+
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="login">
 			Sign In
 		</button>
+
+    <a href="<?php echo site_url()?>/Login/createUser"><button type="button" class="btn btn-lg btn-primary btn-block" > Regisstrasi </button></a>
+    </div>
 	</form>
 
 </div>

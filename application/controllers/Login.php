@@ -57,7 +57,6 @@ class Login extends CI_Controller {
 		$this->load->model('user');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
-		$this->form_validation->set_rules('level', 'Level', 'trim|required');
 		if ($this->form_validation->run()==FALSE) {
 			$this->load->view('registrasi');
 		} 	
