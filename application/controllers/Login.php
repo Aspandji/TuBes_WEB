@@ -15,9 +15,9 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_cekDb');
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('login_view');
+			$this->load->view('login');
 		} else {
-			redirect('home_menu','refresh');
+			redirect('home','refresh');
 		}
 	}
 
@@ -31,8 +31,7 @@ class Login extends CI_Controller {
 			foreach ($result as $row) {
 				$sess_array = array(
 					'id' =>$row->id,
-					'username' => $row->username,
-					'level' => $row->level
+					'username' => $row->username
 				);
 				$this->session->set_userdata('logged_in', $sess_array);
 			}
@@ -64,7 +63,7 @@ class Login extends CI_Controller {
 		} 	
 			else{
 			$this->user->insertUser();
-			$this->load->view('login_view');
+			$this->load->view('login');
 			}
 		}
 	
