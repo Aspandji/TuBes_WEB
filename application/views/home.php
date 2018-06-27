@@ -68,8 +68,12 @@
                   <img src="<?php echo base_url()?>assets/img/<?php echo $value['album']; ?>" width="90" height="90"/> 
             </td>
               <td>
+
                 <a href="<?php echo base_url("index.php/home/update/".$value['id']) ?>"><button type="button" class="btn btn-sm btn-success"> <span class="glyphicon glyphicon-pencil"></span> Update</button></a>
-                <a href="<?php echo base_url("index.php/menu/delete/".$value['id']) ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
+                <a href="<?php echo base_url("index.php/home/delete/".$value['id']) ?>"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
+
+            
+
               </td>
             </tr>
             
