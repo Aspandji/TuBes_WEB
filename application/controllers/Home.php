@@ -17,11 +17,17 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('home');	
+	} 
+
+	public function daftarMusik()
+	{
 		$this->load->helper('url','form');
 		$this->load->model('musik_model');
 		$data['musik_list'] = $this->musik_model->getDatamusik();
-		$this->load->view('home',$data);	
-	} 
+		$this->load->view('daftar_musik',$data);	
+	}
+
 	public function playlist()
 	{
 		$this->load->view('playlist');	
@@ -104,9 +110,19 @@ class Home extends CI_Controller {
 	}
 }
 
+	public function delete($id)
+	{
+		$this->load->helper("url");
+		$this->load->model("musik_model");
+		$this->musik_model->delete($id);
+		redirect('home/daftarmusik');
+	}
 }
+
+
 
 /* End of file Home.php */
 /* Location: ./application/controllers/Home.php */
 
 ?>
+

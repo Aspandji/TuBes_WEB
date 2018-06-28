@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		$this->load->view('login_view');
 	}
 
 	public function cekLogin()
@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_cekDb');
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('login');
+			$this->load->view('login_view');
 		} else {
 			redirect('home','refresh');
 		}
