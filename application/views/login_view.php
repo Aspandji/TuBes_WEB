@@ -42,7 +42,7 @@
 
       </form>
 
-      <p class="text--center">Not a member? <a href="<?php echo base_url('index.php/Login/register') ?>">Sign up now</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+      <p class="text--center">Not a member? <a href="<?php echo base_url('index.php/Login/createUser') ?>">Sign up now</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
 
     </div>
     

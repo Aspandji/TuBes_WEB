@@ -1,42 +1,33 @@
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-    <div class="container">
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Title</a>
-      </div>
-  
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="../">Daftar Pegawai</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">MusikKU</a>
     </div>
-  </nav>
-
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="<?php echo site_url()?>/home">Home</a></li>
+          <li class="active"><a href="<?php echo site_url()?>/home/daftarmusik">Daftar Musik</a></li>
+          <li class=""><a href="<?php echo site_url()?>/home/playlist">Play List</a></li>
+      </ul>
+       <div class="nav navbar-right">
+        <a href="<?php echo site_url()?>/Login/logout"><button type="button" class="btn btn-danger navbar-btn dropdown-toggle button-login"">LogOut</button></a>
+       </div>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+<br>
+  <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <?php echo form_open_multipart('home/create'); ?>  
   <legend>Tambah Data Pegawai</legend>
@@ -60,8 +51,10 @@
     <label for="">Album</label>
     <input type="file" name="userfile" size="20" />
   </div>
+
   <button type="submit" class="btn btn-primary">Tambah</button>
   <?php echo form_close(); ?>
+</div>
 </div>
 </div>
 
