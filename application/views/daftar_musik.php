@@ -1,6 +1,13 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="<?php echo base_url('') ?>assets/datatables.min.css">
+  <script src="<?php echo base_url('') ?>assets/datatables.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#example').DataTable();
+    });
+  </script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -16,8 +23,8 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo site_url()?>/home">Home</a></li>
-          <li class=""><a href="<?php echo site_url()?>/home/daftarmusik">Daftar Musik</a></li>
+        <li class=""><a href="<?php echo site_url()?>/home">Home</a></li>
+          <li class="active"><a href="<?php echo site_url()?>/home/daftarmusik">Daftar Musik</a></li>
           <li class=""><a href="<?php echo site_url()?>/home/playlist">Play List</a></li>
       </ul>
        <div class="nav navbar-right">
@@ -35,7 +42,7 @@
 
 <div class="container">
 <div class="panel panel-default">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover" id="example">
           <thead>
               <tr>
             <th>No</th>   

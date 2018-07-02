@@ -20,6 +20,13 @@ class Home extends CI_Controller {
 		$this->load->view('home');	
 	} 
 
+	public function datatable()
+	{
+		$this->load->model('musik_model');
+		$data["musik_list"] = $this->musik_model->getDataPegawai();
+		$this->load->view('daftar_musik',$data);
+	}
+
 	public function daftarMusik()
 	{
 		$this->load->helper('url','form');
