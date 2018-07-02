@@ -20,20 +20,21 @@
 <a href="<?php echo site_url()?>/Login/logout">Logout</a>
 </div>
 </div>
-<h1>Welcome to Time-Travel</h1>
-<p>This template is created by Paul Simon of SIIT, Shillong under TechSoul.</p>
+<h1>Welcome to MusikKu</h1>
+<p>Selamat menikmati dan mendengarkan musik.</p>
 </div>
 <div class="box">
-<h1>Sekilas Info</h1>
-<p> Kami menyediakan blablablablabla,,,,,,,......
+<h1>Sekilas Info</h1><br>
+<p> Kami menyediakan fitur-fitur yang akan memanjakan anda. Di web ini anda dapat melihat list musik, mendengarkan musik, share musik serta mendownload jika anda inginkan.
 </p>
+<p align="center"> Selamat menikamati!!.  </p>
 
 </div>
 
 <div class="boxp">
 <div class="title">
-<h1>Ipsum Feugiat</h1>
-<p>Semper suscipit posuere apede</p>
+<h1>Album Band</h1>
+<p>Beberapa Album Terfavorit</p>
 </div>
 <div class="boxphoto">
 <img src="../assets/img/ADA-Band-Chemistry.jpg " width="168" height="168">
@@ -41,24 +42,21 @@
 <h3>Ada Band</h3>
 </div>
 <div class="boxphoto">
-<img src="https://templated.co/items/demos/theory/images/pic04.jpg">
+<img src="../assets/img/slank.jpg " width="168" height="168">
 
 
-<h3>Ipsum</h3>
-<p>Vestibulum comm</p>
+<h3>SLANK</h3>
 </div>
 <div class="boxphoto">
-<img src="https://templated.co/items/demos/theory/images/pic05.jpg">
+<img src="../assets/img/peace.jpg " width="168" height="168">
 
-<h3>Tempus</h3>
-<p>Fusce pellentes</p>
+<h3>Rebelution</h3>
 </div>
 
 <div class="boxphoto">
-<img src="https://templated.co/items/demos/theory/images/pic06.jpg">
+<img src="../assets/img/bonjovi.jpg " width="168" height="168">
 
-<h3>Dolore</h3>
-<p>Praesent placer</p>
+<h3>Bon Jovi</h3>
 </div>
 
 </div>
