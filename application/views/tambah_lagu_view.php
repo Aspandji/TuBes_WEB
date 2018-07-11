@@ -27,10 +27,12 @@
   </div>
 </div>
 <br>
+<br>
+<br>
   <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <?php echo form_open_multipart('home/create'); ?>  
-  <legend>Tambah Data Pegawai</legend>
+  <legend>Tambah Data Musik</legend>
   <?php echo validation_errors(); ?>
   <div class="form-group">
     <label for="">Artist</label>
@@ -47,12 +49,17 @@
     <input type="text" class="form-control" name="genre" value="" placeholder="Input field">
   </div>
 
-  <div class="form-group">
-    <label for="">Album</label>
-    <input type="file" name="userfile" size="20" />
+  <div class="upload">
+  <div class="form-element">
+    <label for="album">Album</label>
+    <?=form_upload(array('name' => 'imgfile')) ?>
+    <br>
+    <label for="file_lagu">Musik</label>
+    <?=form_upload(array('name' => 'mp3file')) ?>
   </div>
-
-  <button type="submit" class="btn btn-primary">Tambah</button>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary" id="submit" value="upload" name="go_upload">Tambah</button>
   <?php echo form_close(); ?>
 </div>
 </div>

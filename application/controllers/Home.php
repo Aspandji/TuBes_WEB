@@ -44,39 +44,53 @@ class Home extends CI_Controller {
 	{
 		echo "ini fungsi download";	
 	}	
-	public function upload()
+	public function contact()
 	{
-		echo "ini fungsi upload";	
+		$this->load->view('contact');	
 	}
 	
 	public function create()
 	{
-		$this->load->helper('url','form');
-		$this->load->library('form_validation');
-		$this->load->model('musik_model');
-		$this->form_validation->set_rules('artist', 'Artist', 'trim|required');
-		$this->form_validation->set_rules('lagu', 'Lagu', 'trim|required');
-		$this->form_validation->set_rules('genre', 'Genre', 'trim|required');
-		if ($this->form_validation->run()==FALSE) {
-			$this->load->view('tambah_lagu_view');
-		} else {
+		$this->load->view('tambah_lagu_view');
+
+		if ($this->input->post('go_upload')) {
 			$config['upload_path'] = './assets/img/';
-			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size']  = '10000';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '768';
-			
+			$config['allowed_types'] = 'gif|jpg|png|mp3';
+			$config['overwrite'] = 'TRUE';
+
 			$this->load->library('upload', $config);
-			
-			if ( ! $this->upload->do_upload('userfile'))
-			{
-				$error = array('error' => $this->upload->display_errors());
-				$this->load->view('tambah_lagu_view', $error);
+
+			if (!empty($_FILES['mp3file']['name'])) {
+				if ( ! $this->upload->do_upload('mp3file'))
+					$sub_data['error'] = $this->upload->display_errors();
+				else
+					$file_data = $this->upload->data();
+					$data['lagu'] = $file_data['file_name'];
 			}
-			else{
-			$this->musik_model->insertMusik();
-			$this->load->view('tambah_lagu_sukses');
+
+			if (!empty($_FILES['imgfile']['name'])) {
+				if ( ! $this->upload->do_upload('imgfile'))
+					$sub_data['error'] = $this->upload->display_errors();
+				else
+					$file_data = $this->upload->data();
+					$data['album'] = $file_data['file_name'];
 			}
+
+			$lagu = $_POST['lagu'];
+			$artist = $_POST['artist'];
+			$genre = $_POST['genre'];
+			$album = $data['album'];
+			$file_lagu = $data['lagu'];
+
+			$insert_musik = array(
+				'lagu' => $lagu,
+				'artist' => $artist,
+				'genre' => $genre,
+				'album' => $album,
+				'file_lagu' => $file_lagu
+			);
+
+			$this->Musik_model->insertMusik('lagu', $insert_musik);
 		}
 	}
 

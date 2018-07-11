@@ -12,16 +12,11 @@ class Musik_model extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function insertMusik()
+	public function insertMusik($tableName, $data)
  	{
- 	$object = array(
- 		'lagu' =>$this->input->post('lagu'),
- 		'artist' =>$this->input->post('artist'),
- 		'genre' =>$this->input->post('genre'),
- 		'album' => $this->upload->data('file_name')
- 	);
- 	$this->db->insert('lagu', $object);
- }
+ 		$res = $this->db->insert($tableName, $data);
+ 		return $res;
+ 	}
  public function updateById($id)
 		{
 			$data = array(
