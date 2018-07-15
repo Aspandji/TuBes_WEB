@@ -32,12 +32,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="http://andeznet.com">AndezNet</a>
+    
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="#">Home</a></li>
+              <li><a href="home.php">Home</a></li>
         <li class="active"><a href="#">Music</a></li>
-              <li><a href="#">Logout</a></li>
+              
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -60,18 +60,7 @@
   
   </div>
 
-  <div class="row-fluid">
-      <div class="span12">
-        <div class="row-fluid">
-        <div class="alert alert-info">
-          <a name="contact"></a>
-          <h2>www.andeznet.com</h2>
-          <p class="text-info">Gudang Teknologi & Informasi</p>
-          <p>&copy; <a href="http://andeznet.com">www.andeznet.com</a>&nbsp<?php echo date("Y");?></p>
-        </div><!--/span-->
-        </div><!--/row-->
-      </div><!--/span-->
-  </div><!--/row-->
+  
 
 
     <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
