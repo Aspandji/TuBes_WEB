@@ -26,6 +26,7 @@
         <li class=""><a href="<?php echo site_url()?>/home">Home</a></li>
           <li class="active"><a href="<?php echo site_url()?>/home/daftarmusik">Daftar Musik</a></li>
           <li class=""><a href="<?php echo site_url()?>/home/playlist">Play List</a></li>
+          <li class=""><a href="<?php echo site_url()?>/home/contact">Contact Us</a></li>
       </ul>
        <div class="nav navbar-right">
         <a href="<?php echo site_url()?>/Login/logout"><button type="button" class="btn btn-danger navbar-btn dropdown-toggle button-login"">LogOut</button></a>

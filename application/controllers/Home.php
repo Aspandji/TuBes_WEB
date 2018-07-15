@@ -40,10 +40,6 @@ class Home extends CI_Controller {
 		$this->load->view('playlist');	
 	}
 
-	public function download()
-	{
-		echo "ini fungsi download";	
-	}	
 	public function contact()
 	{
 		$this->load->view('contact');	
