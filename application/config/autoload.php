@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | absolute minimal resources are loaded by default. For example,
 | the database is not connected to automatically since no assumption
 | is made regarding whether you intend to use it.  This file lets
-| you globally define which systems you would like loaded with every
+| you globally 	define which systems you would like loaded with every
 | request.
 |
 | -------------------------------------------------------------------
