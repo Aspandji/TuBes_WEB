@@ -32,11 +32,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-    
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="home.php">Home</a></li>
-        <li class="active"><a href="#">Music</a></li>
+             <li class=""><a href="<?php echo site_url()?>/home">Home</a></li>
+          <li class=""><a href="<?php echo site_url()?>/home/daftarmusik">Daftar Musik</a></li>
+          <li class="active"><a href="<?php echo site_url()?>/home/playlist">Play List</a></li>
+           <li class=""><a href="<?php echo site_url()?>/home/download">Download</a></li>
+          <li class=""><a href="<?php echo site_url()?>/home/contact">Contact Us</a></li>
               
             </ul>
           </div><!--/.nav-collapse -->
@@ -46,18 +48,38 @@
 
   <div class="container">
     <audio controls
-      data-info-album-art="<?php echo base_url();?>/images/logo.jpg"
-      data-info-album-title="Musim Yg Baik"
-      data-info-artist="Sheilaon7"
-      data-info-title="Lapang Dada"
-      data-info-label="Sony Music Indonesia"
-      data-info-year="2015"
-      data-info-att="Sheilaon7"
-      data-info-att-link="http://sheilaon7.com">
-      <source src="<?php echo base_url();?>/music/Sheila On 7 - Lapang Dada.mp3" type="audio/mpeg" />
+      data-info-album-art="<?php echo base_url();?>assets/img/rebelution.png"
+      data-info-album-title="Peace"
+      data-info-artist="Rebelution"
+      data-info-title="Safe_and_Sound"
+      data-info-year="2005"
+      >
+      <source src="<?php echo base_url();?>/assets/img/Rebelution_-_Safe_and_Sound.mp3" type="audio/mpeg" />
     </audio>
-    
-  
+  </div>
+
+  <div class="container">
+    <audio controls
+      data-info-album-art="<?php echo base_url();?>assets/img/lagu-gratis-slank-terlalu-pahit-mp3.png"
+      data-info-album-title="Lagi Sedih"
+      data-info-artist="Slank"
+      data-info-title="Terlalu_Pahit"
+      data-info-year="2015"
+      >
+      <source src="<?php echo base_url();?>/assets/img/Slank_-_Terlalu_Pahit.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <div class="container">
+    <audio controls
+      data-info-album-art="<?php echo base_url();?>assets/img/lagu-gratis-slank-terlalu-pahit-mp3.png"
+      data-info-album-title="Lagi Sedih"
+      data-info-artist="Slank"
+      data-info-title="Terlalu_Manis"
+      data-info-year="2010"
+      >
+      <source src="<?php echo base_url();?>/assets/img/Slank-Terlalu-Manis.mp3" type="audio/mpeg" />
+    </audio>
   </div>
 
   

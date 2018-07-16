@@ -17,6 +17,7 @@
 <a href="<?php echo site_url()?>/home">Home</a>
 <a href="<?php echo site_url()?>/home/daftarmusik">Daftar Musik</a>
 <a href="<?php echo site_url()?>/home/playlist">Play List</a>
+<a href="<?php echo site_url()?>/home/download">Download</a>
 <a href="<?php echo site_url()?>/home/contact">Contact Us</a>
 <a href="<?php echo site_url()?>/Login/logout">Logout</a>
 </div>
